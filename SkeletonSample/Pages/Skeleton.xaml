@@ -12,19 +12,16 @@
         <ResourceDictionary>
             <DataTemplate
                 x:Key="ItemTemplate">
-                <ViewCell>
                     <StackLayout
                         Orientation="Horizontal"
                         Margin="30,0"
                         Padding="0,10"
                         Spacing="20">
-                        <Frame
-                            HasShadow="False"
-                            CornerRadius="20"
+                        <Border
+                            StrokeShape="RoundRectangle 20"
                             Padding="0"
                             WidthRequest="70"
                             HeightRequest="70"
-                            IsClippedToBounds="True"
                             BackgroundColor="{StaticResource WhiteColor}"
                             sk:Skeleton.IsParent="True"
                             sk:Skeleton.IsBusy="{Binding IsBusy}"
@@ -32,15 +29,14 @@
                             <Image
                                 Source="{Binding Image}"
                                 Aspect="AspectFill"/>
-                        </Frame>
+                        </Border>
 
                         <StackLayout
                             Margin="15"
                             Spacing="4">
-                            <Frame
+                            <Border
                                 BackgroundColor="Transparent"
-                                HasShadow="False"
-                                CornerRadius="5"
+                                StrokeShape="RoundRectangle 5"
                                 Padding="0"
                                 HorizontalOptions="Start"
                                 sk:Skeleton.IsBusy="{Binding IsBusy}"
@@ -53,11 +49,10 @@
                                     HorizontalOptions="Start"
                                     sk:Skeleton.IsBusy="{Binding IsBusy}"
                                     sk:Skeleton.Hide="True"/>
-                            </Frame>
-                            <Frame
+                            </Border>
+                            <Border
                                 BackgroundColor="Transparent"
-                                HasShadow="False"
-                                CornerRadius="5"
+                                StrokeShape="RoundRectangle 5"
                                 Padding="0"
                                 HorizontalOptions="Start"
                                 sk:Skeleton.IsBusy="{Binding IsBusy}"
@@ -69,17 +64,15 @@
                                     HorizontalOptions="Start"
                                     sk:Skeleton.IsBusy="{Binding IsBusy}"
                                     sk:Skeleton.Hide="True"/>
-                            </Frame>
+                            </Border>
                         </StackLayout>
 
                         <StackLayout
                             Margin="0,15"
                             HorizontalOptions="EndAndExpand">
-                            <Frame
-                                HasShadow="False"
-                                CornerRadius="5"
+                            <Border
+                                StrokeShape="RoundRectangle 5"
                                 Padding="0"
-                                IsClippedToBounds="True"
                                 BackgroundColor="Transparent"
                                 HorizontalOptions="End" 
                                 sk:Skeleton.IsParent="True"
@@ -92,10 +85,9 @@
                                     Aspect="AspectFill"
                                     sk:Skeleton.IsBusy="{Binding IsBusy}"
                                     sk:Skeleton.Hide="True"/>
-                            </Frame>
+                            </Border>
                         </StackLayout>
                     </StackLayout>
-                </ViewCell>
             </DataTemplate>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -105,10 +97,8 @@
                                MinimumHeaderHeight="250"
                                Animation="Resize">
             <controls:StickyHeader.Header>
-                <Frame HasShadow="False"
-                       CornerRadius="30"
+                <Border StrokeShape="RoundRectangle 30"
                        Margin="0,-30,0,0"
-                       IsClippedToBounds="True"
                        Padding="0"
                        BackgroundColor="Transparent"
                        sk:Skeleton.IsParent="True"
@@ -144,7 +134,7 @@
                                 <ColumnDefinition Width="54"/>
                             </Grid.ColumnDefinitions>
 
-                            <Frame
+                            <Border
                                 Grid.Column="1"
                                 Grid.Row="0"
                                 Margin="0"
@@ -152,8 +142,7 @@
                                 VerticalOptions="Center"
                                 HorizontalOptions="Center"
                                 BackgroundColor="Transparent"
-                                HasShadow="False"
-                                CornerRadius="5"
+                                StrokeShape="RoundRectangle 5"
                                 Padding="0">
                                 <Image
                                     Source="horus.png"
@@ -162,7 +151,7 @@
                                     Aspect="AspectFit"
                                     sk:Skeleton.IsBusy="{Binding IsBusy}"
                                     sk:Skeleton.Hide="True"/>
-                            </Frame>
+                            </Border>
 
                             <ContentView
                                 Grid.Column="2"
@@ -171,14 +160,13 @@
                                     <TapGestureRecognizer
                                         Command="{Binding LoadCommand}" />
                                 </ContentView.GestureRecognizers>
-                                <Frame
+                                <Border
                                     HeightRequest="36"
                                     WidthRequest="36"
                                     VerticalOptions="Center"
                                     HorizontalOptions="Center"
                                     BackgroundColor="Transparent"
-                                    HasShadow="False"
-                                    CornerRadius="5"
+                                    StrokeShape="RoundRectangle 5"
                                     Padding="0">
                                     <Image
                                         Source="load.png"
@@ -189,7 +177,7 @@
                                         VerticalOptions="Center"
                                         sk:Skeleton.IsBusy="{Binding IsBusy}"
                                         sk:Skeleton.Hide="True"/>
-                                </Frame>
+                                </Border>
                             </ContentView>
 
                             <StackLayout
@@ -198,10 +186,9 @@
                                 Grid.ColumnSpan="2"
                                 VerticalOptions="EndAndExpand"
                                 Spacing="4">
-                                <Frame
+                                <Border
                                     BackgroundColor="Transparent"
-                                    HasShadow="False"
-                                    CornerRadius="5"
+                                    StrokeShape="RoundRectangle 5"
                                     Padding="0"
                                     sk:Skeleton.IsBusy="{Binding IsBusy}"
                                     sk:Skeleton.BackgroundColor="{StaticResource WhiteColor}"
@@ -213,11 +200,10 @@
                                         FontSize="40"
                                         sk:Skeleton.IsBusy="{Binding IsBusy}"
                                         sk:Skeleton.Hide="True" />
-                                </Frame>
-                                <Frame
+                                </Border>
+                                <Border
                                     BackgroundColor="Transparent"
-                                    HasShadow="False"
-                                    CornerRadius="5"
+                                    StrokeShape="RoundRectangle 5"
                                     Padding="0"
                                     sk:Skeleton.IsBusy="{Binding IsBusy}"
                                     sk:Skeleton.BackgroundColor="{StaticResource WhiteColor}"
@@ -229,12 +215,12 @@
                                         FontSize="20"
                                         sk:Skeleton.IsBusy="{Binding IsBusy}"
                                         sk:Skeleton.Hide="True" />
-                                </Frame>
+                                </Border>
 
                             </StackLayout>
                         </Grid>
                     </AbsoluteLayout>
-                </Frame>
+                </Border>
             </controls:StickyHeader.Header>
 
             <controls:StickyHeader.Content>
@@ -242,11 +228,10 @@
                     sk:Skeleton.IsBusy="{Binding IsBusy}"
                     sk:Skeleton.IsParent="True"
                     sk:Skeleton.Animation="{sk:DefaultAnimation None}">
-                    <Frame
+                    <Border
                         Margin="30,0,30,30"
                         BackgroundColor="Transparent"
-                        HasShadow="False"
-                        CornerRadius="5"
+                        StrokeShape="RoundRectangle 5"
                         Padding="0"
                         WidthRequest="300"
                         HorizontalOptions="Start"
@@ -260,10 +245,8 @@
                             FontSize="24"
                             sk:Skeleton.IsBusy="{Binding IsBusy}"
                             sk:Skeleton.Hide="True"/>
-                    </Frame>
-                    <ListView
-                        RowHeight="90"
-                        SeparatorVisibility="None"
+                    </Border>
+                    <CollectionView
                         SelectionMode="None"
                         VerticalOptions="FillAndExpand"
                         BackgroundColor="Transparent"

@@ -12,8 +12,7 @@
         <ResourceDictionary>
             <DataTemplate
                 x:Key="ItemTemplate">
-                <ViewCell>
-                    <StackLayout
+                <StackLayout
                         Orientation="Horizontal"
                         Margin="30,0"
                         Padding="0,10"
@@ -89,7 +88,6 @@
                             </Border>
                         </StackLayout>
                     </StackLayout>
-                </ViewCell>
             </DataTemplate>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -249,9 +247,7 @@
                             sk:Skeleton.IsBusy="{Binding IsBusy}"
                             sk:Skeleton.Hide="True"/>
                     </Border>
-                    <ListView
-                        RowHeight="90"
-                        SeparatorVisibility="None"
+                    <CollectionView
                         SelectionMode="None"
                         VerticalOptions="FillAndExpand"
                         BackgroundColor="Transparent"
