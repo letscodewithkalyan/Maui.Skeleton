@@ -2,65 +2,40 @@
 
 	<PropertyGroup>
 		<TargetFrameworks>net8.0;net8.0-android;net8.0-ios</TargetFrameworks>
-		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
-		<!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
-
-		<!-- Note for MacCatalyst:
-		The default runtime is maccatalyst-x64, except in Release config, in which case the default is maccatalyst-x64;maccatalyst-arm64.
-		When specifying both architectures, use the plural <RuntimeIdentifiers> instead of the singular <RuntimeIdentifier>.
-		The Mac App Store will NOT accept apps with ONLY maccatalyst-arm64 indicated;
-		either BOTH runtimes must be indicated or ONLY macatalyst-x64. -->
-		<!-- For example: <RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers> -->
-
-		<RootNamespace>Maui.Skeleton</RootNamespace>
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<MauiVersion>8.0.83</MauiVersion>
 
 		<!-- Display name -->
-		<ApplicationTitle>Maui.Skeleton</ApplicationTitle>
+		<AssemblyName>Maui.Skeleton</AssemblyName>
+		<RootNamespace>Maui.Skeleton</RootNamespace>
+		<Product>$(AssemblyName) ($(TargetFramework))</Product>
+		<PackOnBuild>false</PackOnBuild>
+		<NeutralLanguage>en</NeutralLanguage>
+		<UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
+		<LangVersion>latest</LangVersion>
 
-		<!-- App Identifier -->
-		<ApplicationId>com.companyname.maui.skeleton</ApplicationId>
-
-		<!-- Versions -->
-		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
-		<ApplicationVersion>1</ApplicationVersion>
+		<!-- Package config> -->
+		<PackageId>Maui.Skeleton</PackageId>
+		<Version>0.0.1</Version>
+		<Authors>LetsCodeWithKalyan</Authors>
+		<Company>LetsCodeWithKalyan</Company>
+		<Description>The Skeleton control is a popular approach to loading content in mobile apps that provides one or more visual placeholders while content is being loaded. This technique is particularly useful for improving user experience, as it reduces perceived load times and provides a more engaging experience.</Description>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryUrl>https://github.com/letscodewithkalyan/Maui.Skeleton</RepositoryUrl>
+		<licenseUrl>https://github.com/letscodewithkalyan/Maui.Skeleton/blob/main/LICENSE</licenseUrl>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
-		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
-	<ItemGroup>
-		<!-- App Icon -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
-
-		<!-- Images -->
-		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
-	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Remove="Extensions\" />
-	  <None Remove="Animations\" />
-	  <None Remove="Platforms\iOS\" />
-	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Extensions\" />
-	  <Folder Include="Animations\" />
-	  <Folder Include="Platforms\iOS\" />
 	</ItemGroup>
 </Project>
