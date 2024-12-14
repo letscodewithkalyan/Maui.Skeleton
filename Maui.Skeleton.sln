@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1706.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maui.Skeleton", "Maui.Skeleton\Maui.Skeleton.csproj", "{C016B9AD-9345-4B07-A1F6-70DF20F33EC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkeletonSample", "SkeletonSample\SkeletonSample.csproj", "{B3A266DE-0CD6-4EA9-BB6B-DD7B09C14D1B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C016B9AD-9345-4B07-A1F6-70DF20F33EC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C016B9AD-9345-4B07-A1F6-70DF20F33EC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C016B9AD-9345-4B07-A1F6-70DF20F33EC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C016B9AD-9345-4B07-A1F6-70DF20F33EC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3A266DE-0CD6-4EA9-BB6B-DD7B09C14D1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3A266DE-0CD6-4EA9-BB6B-DD7B09C14D1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3A266DE-0CD6-4EA9-BB6B-DD7B09C14D1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3A266DE-0CD6-4EA9-BB6B-DD7B09C14D1B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {19939F42-E207-4261-9997-F6514EF4D4AE}
+	EndGlobalSection
+EndGlobal
