@@ -16,8 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Pack
-        run: dotnet pack Maui.Skeleton\Maui.Skeleton.csproj -c Release
+        run: dotnet pack Maui.Skeleton\Maui.Skeleton.csproj -c Release -o ./artifacts
       - name: Push
-        run: dotnet nuget push bin\Release\Maui.Skeleton.*.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_PUBLISH_API_KEY }}
+        run: dotnet nuget push ./artifacts/*.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_PUBLISH_API_KEY }}
         env:
           GITHUB_TOKEN: ${{ secrets.NUGET_PUBLISH_API_KEY }}
