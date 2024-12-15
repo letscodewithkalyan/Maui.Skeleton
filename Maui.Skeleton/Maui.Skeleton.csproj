@@ -18,7 +18,7 @@
 		<LangVersion>latest</LangVersion>
 
 		<!-- Package config> -->
-		<PackageId>Maui.Skeleton</PackageId>
+		<PackageId>Maui.SkeletonLoader</PackageId>
 		<Version>0.0.1</Version>
 		<Authors>LetsCodeWithKalyan</Authors>
 		<Company>LetsCodeWithKalyan</Company>
