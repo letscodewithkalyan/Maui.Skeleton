@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Pack
-        run: dotnet pack Maui.Skeleton.sln -c Release
+        run: dotnet pack Maui.Skeleton\Maui.Skeleton.csproj -c Release
       - name: Push
         run: dotnet nuget push Maui.Skeleton\Maui.Skeleton\bin\Release\Plugin.Maui.Biometric.*.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }}
         env:
