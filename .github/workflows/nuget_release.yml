@@ -2,11 +2,6 @@ name: Create a release on NuGet
 
 on:
   workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version to publish'
-        required: true
-        default: '1.0.0'
     
 jobs:
   release-nuget:
@@ -16,8 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Pack
-        run: dotnet pack Maui.Skeleton\Maui.Skeleton.csproj -c Release -o ./artifacts
+        run: dotnet pack Maui.Skeleton\Maui.Skeleton.csproj -c Release -o .\artifacts
+      - name: Debug list files
+        run: ls -R .\artifacts
       - name: Push
-        run: dotnet nuget push ./artifacts/*.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_PUBLISH_API_KEY }}
         env:
-          GITHUB_TOKEN: ${{ secrets.NUGET_PUBLISH_API_KEY }}
+          NUGET_PUBLISH_API_KEY: ${{ secrets.NUGET_PUBLISH_API_KEY }}
+        run: dotnet nuget push .\artifacts\*.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_PUBLISH_API_KEY }}
+ 
