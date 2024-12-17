@@ -12,19 +12,20 @@ Add the following properties to generate a loading animation:
 
 ```XML
 <CollectionView
-                SelectionMode="None"
-                VerticalOptions="FillAndExpand"
-                BackgroundColor="Transparent"
-                ItemTemplate="{StaticResource ItemTemplate}"
-                ItemsSource="{Binding Items}"
-                sk:Skeleton.IsParent="True"
-                sk:Skeleton.IsBusy="{Binding IsBusy}"/>
+    SelectionMode="None"
+    VerticalOptions="FillAndExpand"
+    BackgroundColor="Transparent"
+    ItemTemplate="{StaticResource ItemTemplate}"
+    ItemsSource="{Binding Items}"
+    sk:Skeleton.IsParent="True"
+    sk:Skeleton.IsBusy="{Binding IsBusy}"/>
 ```
 
 Add the following properties to set a loading animation with a specific background color:
 
 ```XML
-<Border BackgroundColor="Transparent"
+<Border 
+    BackgroundColor="Transparent"
     StrokeShape="RoundRectangle 5"
     sk:Skeleton.IsBusy="{Binding IsBusy}"
     sk:Skeleton.BackgroundColor="#c6c6c5">
@@ -66,3 +67,6 @@ Add the following properties to set a loading animation with a specific backgrou
 #### AnimationParameter (Double?)
 - Animation parameter to modify the animation.
 - The default value is null.
+
+## Credits
+This project includes code from [Repository Name](https://github.com/HorusSoftwareUY/Xamarin.Forms.Skeleton), which is licensed under the [License Name](https://github.com/HorusSoftwareUY/Xamarin.Forms.Skeleton/blob/master/LICENSE). Which is migrated to MAUI
