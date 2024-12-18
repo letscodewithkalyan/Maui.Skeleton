@@ -28,6 +28,7 @@ Add the following properties to set a loading animation with a specific backgrou
     BackgroundColor="Transparent"
     StrokeShape="RoundRectangle 5"
     sk:Skeleton.IsBusy="{Binding IsBusy}"
+    sk:Skeleton.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
     sk:Skeleton.BackgroundColor="#c6c6c5">
     <Label Text="{Binding Title}"
           TextColor="#000000"
