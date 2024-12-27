@@ -19,7 +19,7 @@
 
 		<!-- Package config> -->
 		<PackageId>LetsCode.Maui.Skeleton</PackageId>
-		<Version>0.0.2</Version>
+		<Version>0.0.3</Version>
 		<Authors>LetsCodeWithKalyan</Authors>
 		<Company>LetsCodeWithKalyan</Company>
 		<Description>The Skeleton control is a popular approach to loading content in mobile apps that provides one or more visual placeholders while content is being loaded. This technique is particularly useful for improving user experience, as it reduces perceived load times and provides a more engaging experience.</Description>
