@@ -5,15 +5,17 @@ using Maui.Skeleton.Extensions;
 
 namespace Maui.Skeleton
 {
-    public static class Skeleton
+    public class Skeleton : View
     {
         #region Public Properties
 
-        public static readonly BindableProperty IsParentProperty = BindableProperty.CreateAttached("IsParent", typeof(bool), typeof(View), false);
+        public static readonly BindableProperty IsParentProperty = BindableProperty.CreateAttached(nameof(IsParent), typeof(bool), typeof(Skeleton), false);
 
-        public static void SetIsParent(BindableObject b, bool value) => b.SetValue(IsParentProperty, value);
-
-        public static bool GetIsParent(BindableObject b) => (bool)b.GetValue(IsParentProperty);
+        public bool IsParent
+        {
+            get { return (bool)GetValue(IsParentProperty); }
+            set { SetValue(IsParentProperty, value); }
+        }
 
         public static readonly BindableProperty IsBusyProperty = BindableProperty.CreateAttached("IsBusy", typeof(bool), typeof(View), default(bool), propertyChanged: (b, oldValue, newValue) => OnIsBusyChanged(b, (bool)newValue));
 
@@ -87,7 +89,8 @@ namespace Maui.Skeleton
         {
             if (bindable.GetType().IsSubclassOf(typeof(View)))
             {
-                HandleIsBusyChanged(bindable, newValue);
+                var skeleton = ((Skeleton)bindable);
+                skeleton.HandleIsBusyChanged(bindable, newValue);
             }
             else
             {
@@ -95,7 +98,7 @@ namespace Maui.Skeleton
             }
         }
 
-        static void HandleIsBusyChanged(BindableObject bindable, bool isBusyNewValue)
+        void HandleIsBusyChanged(BindableObject bindable, bool isBusyNewValue)
         {
             if (!(bindable is View))
                 return;
@@ -109,7 +112,7 @@ namespace Maui.Skeleton
                 }
                 else
                 {
-                    if (view is Layout layout && !GetIsParent(bindable))
+                    if (view is Layout layout && !IsParent)
                     {
                         SetLayoutChilds(layout);
                     }
@@ -135,7 +138,7 @@ namespace Maui.Skeleton
 
                     RestoreBackgroundColor(view);
 
-                    if (view is Layout layout && !GetIsParent(bindable))
+                    if (view is Layout layout && !IsParent)
                     {
                         RestoreLayoutChilds(layout);
                     }
